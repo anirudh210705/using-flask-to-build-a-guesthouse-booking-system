@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <!--head section-->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>index page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  </head>
+  <!--body section-->
+  <body>
+    <header>
+      <div class="navbar-container mt-3 container-liquid">
+        <h3 class="navbar-text">IIT Kgp Guest House Website</h2>
+        <nav>
+            <ul>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="https://www.iitkgp.ac.in/" class="nav-link">About</a></li>
+                <li><a href="#footer-main" class="nav-link">Contact</a></li>
+                <li><a href="url_for('register')" class="nav-link">register</a></li>
+                <li><a href="url_for('login')" class="nav-link">Login</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {%if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{category}}">
+            {{message}}
+          </div>
+        {%endfor%}
+      {% endif %}
+    {% endwith%}
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>

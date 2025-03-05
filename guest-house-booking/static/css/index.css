@@ -1,0 +1,38 @@
+.navbar-container{
+  display : flex;
+  background : rgb(224, 100, 100);
+  border-radius : 5px;
+  align-items: center;
+  justify-content: space-between;
+  padding : 9px;
+}
+
+nav ul {
+  display: flex;   /* Aligns list items horizontally */
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+}
+.navbar-text{
+  color : white;
+}
+.nav-link{
+  margin-right : 15px;
+  text-decoration: none;
+  color : white;
+  cursor : pointer;
+}
+
+.carousel-inner img {
+  width: 100%;         /* Ensures full width */
+  height: 400px;       /* Set a fixed height */
+  object-fit: cover;   /* Crops image to fit without distortion */
+}
+
+.content-section{
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  padding : 10px 20px;
+  border : 1px solid r(224, 100, 100);
+}
