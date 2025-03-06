@@ -35,6 +35,69 @@
         {% endif %}
         </div>
         <div class="form-group mt-1">
+          {{form.username.label(class='form-control-label')}}
+          {% if form.username.errors %}
+          {{ form.username(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.username.errors %}
+              <span>{{error}}</span>
+            {% endfor %}
+          </div>
+        {%  else %}
+          {{form.username(class='form-control form-control-lg')}}
+        {% endif %}
+        </div>
+        <div class="form-group mt-1">
+          {{form.age.label(class='form-control-label')}}
+          {% if form.age.errors %}
+          {{ form.age(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.age.errors %}
+              <span>{{error}}</span>
+            {% endfor %}
+          </div>
+        {%  else %}
+          {{form.age(class='form-control form-control-lg')}}
+        {% endif %}
+        </div>
+        <div class="form-group mt-1">
+          {{ form.gender.label(class='form-control-label') }}
+          {{ form.gender(class="form-control form-control-lg") }}
+          {% if form.gender.errors %}
+              <div class="invalid-feedback">
+                  {% for error in form.gender.errors %}
+                      <span>{{ error }}</span>
+                  {% endfor %}
+              </div>
+          {% endif %}
+      </div>
+        <div class="form-group mt-1">
+          {{form.address.label(class='form-control-label')}}
+          {% if form.address.errors %}
+          {{ form.address(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.address.errors %}
+              <span>{{error}}</span>
+            {% endfor %}
+          </div>
+        {%  else %}
+          {{form.address(class='form-control form-control-lg')}}
+        {% endif %}
+        </div>
+        <div class="form-group mt-1">
+          {{form.email.label(class='form-control-label')}}
+          {% if form.email.errors %}
+          {{ form.email(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.email.errors %}
+              <span>{{error}}</span>
+            {% endfor %}
+          </div>
+          {%  else %}
+            {{form.email(class='form-control form-control-lg')}}
+          {% endif %}
+        </div>
+        <div class="form-group mt-1">
           {{form.rollnumber.label(class='form-control-label')}}
           {% if form.rollnumber.errors %}
           {{ form.rollnumber(class="form-control form-control-lg is-invalid") }}
@@ -47,19 +110,7 @@
           {{form.rollnumber(class='form-control form-control-lg')}}
         {% endif %}
         </div>
-        <div class="form-group mt-1">
-          {{form.email.label(class='form-control-label')}}
-          {% if form.email.errors %}
-          {{ form.email(class="form-control form-control-lg is-invalid") }}
-          <div class="invalid-feedback">
-            {% for error in form.email.errors %}
-              <span>{{error}}</span>
-            {% endfor %}
-          </div>
-        {%  else %}
-          {{form.email(class='form-control form-control-lg')}}
-        {% endif %}
-        </div>
+        
         <div class="form-group mt-1">
           {{form.password.label(class='form-control-label')}}
           {% if form.password.errors %}
@@ -97,4 +148,5 @@
        Already Have An Account?<a class="ml-2" href="{{url_for('login')}}"> Sign In</a>
       </small>
   </div>
+  {% include "footer.html"%}
 {% endblock content %}
