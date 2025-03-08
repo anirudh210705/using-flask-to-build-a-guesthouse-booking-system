@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="image-slideshow mt-4">
+  <!--Carousel-->
+  <div id="guesthouses" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#guesthouses" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#guesthouses" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#guesthouses" data-bs-slide-to="2"></button>
+    </div>
+  
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../static/images/kolkata1.jpg" alt="Kolkata" class="d-block w-100">
+        <div class="carousel-caption">
+          <h3>Kolkata Guesthouse</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/images/tghfront.jpg" alt="tsgfront" class="d-block w-100">
+        <div class="carousel-caption">
+          <h3>tsg Guesthouse</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/images/vgh.jpg" alt="vgh" class="d-block w-100">
+        <div class="carousel-caption">
+          <h3>vgh Guesthouse</h3>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#guesthouses" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#guesthouses" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+  {% include "footer.html"%}
+{% endblock content %}
